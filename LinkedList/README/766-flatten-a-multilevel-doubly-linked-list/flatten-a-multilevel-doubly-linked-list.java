@@ -10,28 +10,46 @@ class Node {
 
 class Solution {
     public Node flatten(Node head) {
-        Node temphead = head;
-        Node next=null;
-        Node prev = null;
-        Node child = null;
-        while(temphead != null){
-            if(temphead.child != null){
-                next = temphead.next;
-                child = temphead.child;
-                temphead.next = child;
-                child.prev = temphead;
-                while(child != null){
-                    prev = child;
-                    child = child.next;
+        if(head == null)return head;
+        Node cur = head;
+        while(cur != null){
+            if(cur.child != null){
+                Node next = cur.next;
+                cur.next = flatten(cur.child);
+                cur.next.prev = cur;
+                cur.child = null;
+                while(cur.next != null){
+                    cur = cur.next;
                 }
-                prev.next = next;
                 if(next != null){
-                    next.prev = prev;
+                    cur.next = next;
+                    next.prev = cur;
                 }
-                temphead.child = null;
             }
-            temphead = temphead.next;
+            cur = cur.next;
         }
+        // Node temphead = head;
+        // Node next=null;
+        // Node prev = null;
+        // Node child = null;
+        // while(temphead != null){
+        //     if(temphead.child != null){
+        //         next = temphead.next;
+        //         child = temphead.child;
+        //         temphead.next = child;
+        //         child.prev = temphead;
+        //         while(child != null){
+        //             prev = child;
+        //             child = child.next;
+        //         }
+        //         prev.next = next;
+        //         if(next != null){
+        //             next.prev = prev;
+        //         }
+        //         temphead.child = null;
+        //     }
+        //     temphead = temphead.next;
+        // }
         return head;
     }
 }
