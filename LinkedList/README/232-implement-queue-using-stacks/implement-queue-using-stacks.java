@@ -15,9 +15,6 @@ class MyQueue {
                 s2.push(s1.pop());
             }
         }
-        if(s2.isEmpty()){
-            return -1;
-        }
         return s2.pop();
     }
     public int peek() {
