@@ -16,16 +16,16 @@ class MyStack {
          q1=temp;
     }
     public int pop() {
-         if(q2.isEmpty()){
-            return -1;
-         }
+        //  if(q2.isEmpty()){
+        //     return -1;
+        //  }
          return q2.poll();
     }
     
     public int top() {
-       if(q2.isEmpty()){
-            return -1;
-         }
+    //    if(q2.isEmpty()){
+    //         return -1;
+    //      }
          return q2.peek();
     }
     
