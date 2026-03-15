@@ -24,23 +24,15 @@ class Solution {
     }
 
     public boolean isPalindrome(ListNode head) {
-
         ListNode slow = head;
         ListNode fast = head;
-
-        
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
         }
-
-      
         ListNode secondhalf = reverseList(slow);
-
         ListNode p1 = head;
         ListNode p2 = secondhalf;
-
-        
         while (p2 != null) {
             if (p1.val != p2.val) {
                 return false;
