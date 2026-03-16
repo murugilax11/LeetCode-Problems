@@ -84,7 +84,8 @@ class MyLinkedList {
                 head =head.next;
                 if(head != null){
                 head.prev = null;
-            }else{
+            }
+            else{
                 tail=null;
             }
             }
