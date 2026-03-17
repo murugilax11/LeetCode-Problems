@@ -1,12 +1,12 @@
 class Solution {
 void backtrack(int[] nums, List<List<Integer>> res, List<Integer> temp,boolean[] visit){
         if(temp.size() == nums.length){
+            if(!res.contains(temp))
             res.add(new ArrayList<>(temp));
             return;
         }
         for(int i=0; i<nums.length;i++){
             if(visit[i])continue;
-            if(i>0 && nums[i] == nums[i-1] && !visit[i-1])continue;
             visit[i] = true;
             temp.add(nums[i]);
             backtrack(nums,res,temp,visit);
