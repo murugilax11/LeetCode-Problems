@@ -33,7 +33,7 @@ class Solution {
             Collections.reverse(level);
         }
         ans.add(level);
-        left =! left;
+        left = !left;
         }
         return ans;
     }
