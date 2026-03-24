@@ -20,7 +20,6 @@ class Solution {
         Queue<TreeNode> q = new LinkedList<>();
         q.add(root);
         boolean left = true;
-
         while (!q.isEmpty()) {
             int n = q.size();
             List<Integer> level = new ArrayList<>();
@@ -30,13 +29,12 @@ class Solution {
                 if (node.left != null) q.offer(node.left);
                 if (node.right != null) q.offer(node.right);
             }
-            if (!left) {
-                Collections.reverse(level);
-            }
-            ans.add(level);
-            left = !left;
+        if(!left){
+            Collections.reverse(level);
         }
-
+        ans.add(level);
+        left =! left;
+        }
         return ans;
     }
 }
