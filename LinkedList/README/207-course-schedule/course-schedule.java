@@ -6,7 +6,7 @@ class Solution {
             adj.add(new ArrayList<>());
         }
         for(int[] edge : prerequisites){
-            adj.get(edge[0]).add(edge[1]);
+            adj.get(edge[1]).add(edge[0]);
         }
         
         int[] indegree = new int[numCourses];
@@ -14,8 +14,7 @@ class Solution {
             for(int n : adj.get(i)){
                 indegree[n]++;
             }
-        }
-        
+        }       
         
         Queue<Integer> q = new LinkedList<>();
         for(int i =0; i<numCourses; i++){
