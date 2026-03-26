@@ -10,10 +10,6 @@ class Solution {
     }
 
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
-           List<List<Integer>> adj = new ArrayList<>();
-        for(int i =0; i<rooms.size();i++){
-            adj.add(new ArrayList<>());
-        }
         
         boolean[] visit = new boolean[rooms.size()];
          dfs(0,visit,rooms);
@@ -21,6 +17,7 @@ class Solution {
          for(boolean check : visit){
           if(!check) return false;
          }
+         
        return true;
     }
 }
