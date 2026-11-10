@@ -14,17 +14,17 @@
  * }
  */
 class Solution {
-    public void  view(TreeNode cur,List<Integer> res,int level){
-        if(cur == null)return;
+    static void view(TreeNode root, List<Integer> res, int level){
+        if(root == null) return;
         if(level == res.size()){
-            res.add(cur.val);
+            res.add(root.val);
         }
-        view(cur.right,res,level+1);
-        view(cur.left,res,level+1);
+        view(root.right, res, level+1);
+        view(root.left, res, level+1);
     }
     public List<Integer> rightSideView(TreeNode root) {
-        List<Integer> result = new LinkedList<>();
-        view(root,result,0);
-        return result;
+        List<Integer> res = new LinkedList<>();
+        view(root, res,0);
+        return res;
     }
 }
